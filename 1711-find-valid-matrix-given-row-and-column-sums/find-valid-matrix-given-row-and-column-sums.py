@@ -1,0 +1,26 @@
+class Solution:
+    def restoreMatrix(self, rowSum: List[int], colSum: List[int]) -> List[List[int]]:
+        rows = len(rowSum)
+        cols = len(colSum)
+
+        matrix = [[0] * cols for _ in range(rows)]
+
+        i = 0
+        j = 0
+
+        while i < rows and j < cols:
+            value = min(rowSum[i], colSum[j])
+
+            matrix[i][j] = value
+
+            rowSum[i] -= value
+            colSum[j] -= value
+
+            if rowSum[i] == 0:
+                i += 1
+
+            if colSum[j] == 0:
+                j += 1
+
+        return matrix
+        
