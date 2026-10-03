@@ -4,7 +4,7 @@ class Solution:
             return nums[0]
         loot = nums # loot amount is stored in loot array
 
-        loot[0]=nums[0]
+        # loot[0]=nums[0] 
         loot[1]=max(nums[0],nums[1]) #for first two houses 
 
         for i in range(2,len(nums)):
